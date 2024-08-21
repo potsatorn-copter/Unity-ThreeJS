@@ -1,0 +1,64 @@
+/* CharacterSelection.css */
+.character-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #1ea1de);
+}
+
+.character-title {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+  font-size: 5rem;
+  font-weight: bold;
+  color: rgb(190, 197, 180);
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.character-container {
+  display: flex;
+  justify-content: center;
+  gap: 70px; /* เพิ่มระยะห่างระหว่างรูป */
+  margin-top: 100px;
+  margin-bottom: 150px; /* ลดระยะห่างระหว่างรูปกับปุ่ม */
+}
+
+.character-image {
+  width: 200px;
+  height: 160px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.character-image.selected {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.7);
+}
+
+.btn-custom {
+  font-size: 1rem; /* ลดขนาดฟอนต์ลง */
+  padding: 8px 16px; /* ลดขนาด padding ลง */
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px; /* เพิ่มระยะห่างระหว่างรูปกับปุ่ม */
+}
+
+.btn-custom:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.btn-custom:hover:not(:disabled) {
+  background: #0056b3;
+}

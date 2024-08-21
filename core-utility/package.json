@@ -1,0 +1,22 @@
+{
+  "name": "core-utility",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && vite build"
+  },
+  "dependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "axios": "^1.7.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.133.1"
+  },
+  "devDependencies": {
+    "@types/three": "^0.167.1",
+    "typescript": "^4.3.5",
+    "vite": "^2.3.8"
+  }
+}
