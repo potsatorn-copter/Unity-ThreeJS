@@ -1,0 +1,11 @@
+{
+  "languages": [
+    {
+      "hello": "สวัสดี",
+      "goodbye": "ลาก่อน",
+      "please": "กรุณา",
+      "thankYou": "ขอบคุณ",
+      "sorry": "ขอโทษ"
+    }
+  ]
+}

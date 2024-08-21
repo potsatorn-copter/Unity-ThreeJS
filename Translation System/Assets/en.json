@@ -1,0 +1,11 @@
+{
+  "languages": [
+    {
+      "hello": "Hello",
+      "goodbye": "Goodbye",
+      "please": "Please",
+      "thankYou": "ThankYou",
+      "sorry": "Sorry"
+    }
+  ]
+}

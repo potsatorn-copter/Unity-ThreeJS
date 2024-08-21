@@ -1,0 +1,3 @@
+เข้า CMD เพื่อ เปิดเซิฟเวอร์ก่อน
+1: cd YourPathname\Translation System\Cmd python Setting
+2: python translate_apiGerman.py  or  python translate_apiTH.py
