@@ -3,7 +3,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Leaderboard.css';
-import LeaderboardLocalStorage from 'core-utility/src/LeaderboardLocalStorage'; // ใช้ Local Storage
+import LeaderboardLocalStorage from 'core-utility/LeaderboardLocalStorage'; // ใช้ Local Storage
 const Leaderboard = ({ latestScore, isWin, latestPlayerName, latestCharacter }) => {
     const navigate = useNavigate();
     const [leaderboard, setLeaderboard] = useState([]);

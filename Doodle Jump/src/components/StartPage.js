@@ -1,7 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LeaderboardLocalStorage from 'core-utility/src/LeaderboardLocalStorage';
+import LeaderboardLocalStorage from 'core-utility/LeaderboardLocalStorage';
 const StartPage = () => {
     const navigate = useNavigate();
     const [playerName, setPlayerName] = useState('');

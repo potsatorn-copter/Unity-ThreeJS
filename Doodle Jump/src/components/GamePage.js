@@ -14,9 +14,9 @@ import Leaderboard from './Leaderboard'; // คอมโพเนนท์สำ
 import { setupEventHandlers } from './EventHandlers'; // ตั้งค่า event handlers
 import { initializeScene, initializeCamera, initializeRenderer } from './SceneSetup'; // ตั้งค่าฉาก, กล้อง และ renderer
 import { resetPlatforms, recyclePlatforms, createBluePlatformNearby, createInitialPlatforms, checkPlatformCollision, createNewPlatform } from './PlatformManager'; // จัดการ platform
-import { setupLights } from 'core-utility/src/LightSetup'; // ตั้งค่าแสง
-import { loadSounds } from 'core-utility/src/Audio'; // โหลดเสียง
-import LeaderboardLocalStorage from 'core-utility/src/LeaderboardLocalStorage'; // เปลี่ยนเป็นใช้ Local Storage
+import { setupLights } from 'core-utility/LightSetup'; // ตั้งค่าแสง
+import { loadSounds } from 'core-utility/Audio'; // โหลดเสียง
+import LeaderboardLocalStorage from 'core-utility/LeaderboardLocalStorage'; // เปลี่ยนเป็นใช้ Local Storage
 const GamePage = () => {
     const location = useLocation();
     const { selectedCharacter, playerName } = location.state || { selectedCharacter: 'Doodle', playerName: localStorage.getItem('playerName') || '' };
@@ -25,7 +25,7 @@ const GamePage = () => {
     const [debugInfo, setDebugInfo] = useState({}); // state สำหรับ debug information
     const [isGameOver, setIsGameOver] = useState(false); // state สำหรับสถานะเกมจบ
     const [isWin, setIsWin] = useState(false); // state สำหรับสถานะชนะเกม
-    const [timeLeft, setTimeLeft] = useState(90); // state สำหรับเวลาที่เหลือ
+    const [timeLeft, setTimeLeft] = useState(50); // state สำหรับเวลาที่เหลือ
     const [latestScore, setLatestScore] = useState(0); // state สำหรับคะแนนล่าสุด
     const [leaderboard, setLeaderboard] = useState([]); // state สำหรับ leaderboard
     const scoreRef = useRef(0); // ตัวแปร ref สำหรับคะแนน
@@ -151,7 +151,7 @@ const GamePage = () => {
         //เคลื่อนที่ซ้ายขวา
         if (characterRef.current) {
             characterRef.current.velocity = characterRef.current.velocity || { x: 0, y: -0.01, z: 0 };
-            characterRef.current.position.z += keys.d.pressed ? -0.07 : keys.a.pressed ? 0.07 : 0;
+            characterRef.current.position.z += keys.d.pressed ? -0.09 : keys.a.pressed ? 0.09 : 0;
             if (isJumping.current) {
                 characterRef.current.velocity.y += gravity;
                 characterRef.current.position.y += characterRef.current.velocity.y;
@@ -162,8 +162,8 @@ const GamePage = () => {
                 characterRef.current.velocity.y = jumpVelocity;
                 isJumping.current = true;
             }
-            camera.position.y = characterRef.current.position.y + 2; // ปรับตำแหน่งกล้องให้ตามตัวละคร
-            if (characterRef.current.position.y <= minHeightRef.current - 1) {
+            camera.position.y = characterRef.current.position.y + 1; // ปรับตำแหน่งกล้องให้ตามตัวละคร
+            if (characterRef.current.position.y <= minHeightRef.current - 4) {
                 isRunning = false;
                 isJumping.current = false;
                 endGame();

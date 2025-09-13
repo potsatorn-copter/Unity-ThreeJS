@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { loadFBXCharacter, loadOBJCharacter } from 'core-utility/src/CharacterLoader';
+import { loadFBXCharacter, loadOBJCharacter } from 'core-utility/CharacterLoader';
 // ฟังก์ชันสำหรับเพิ่มเสียงให้กับตัวละคร
 export function addSounds(character, sounds) {
     if (sounds.jumpSound instanceof THREE.Object3D) {
@@ -27,8 +27,8 @@ export function setupCharacter(character, sounds, scene, callback, characterName
 }
 // ฟังก์ชันสำหรับโหลดตัวละคร Doodle
 function loadDoodle(scene, sounds, callback) {
-    loadOBJCharacter('/3D_and_Picture/DoodleJump.mtl', '/3D_and_Picture/DoodleJump.obj', scene, sounds, character => {
-        character.scale.set(1, 1, 1); // ตั้งค่า scale ของตัวละคร Doodle
+    loadFBXCharacter('/3D_and_Picture/DoodleJump.fbx', scene, sounds, character => {
+        character.scale.set(0.01, 0.01, 0.01); // ตั้งค่า scale ของตัวละคร Doodle
         setupCharacter(character, sounds, scene, callback, 'Doodle');
     });
 }
